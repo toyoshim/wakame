@@ -35,7 +35,7 @@ build () {
     third_party/jslt/src/ArrayBufferFile.js \
     third_party/jslt/src/Directory.js \
     third_party/jslt/src/TarDirectory.js \
-      | ./bower_components/uglify-js/bin/uglifyjs > chrome/third_party/tar.min.js
+      | ./bower_components/uglify-js/bin/uglifyjs -nc > chrome/third_party/tar.min.js
   return $?
 }
 
