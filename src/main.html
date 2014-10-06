@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+  <title>Wakame</title>
+  <script src="../bower_components/platform/platform.js"></script>
+  <link rel="import" href="../bower_components/core-icons/core-icons.html">
+  <link rel="import" href="../bower_components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="../bower_components/core-transition/core-transition.html">
+  <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+
+  <style shim-shadowdom>
+    body {
+      font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+      margin: 0;
+      padding: 1px;
+      color: #333;
+      background-color: #fff;
+    }
+    
+    paper-tabs, core-toolbar {
+      background-color: #75d;
+      color: #fff;
+      box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    paper-tabs::shadow #selectionBar {
+      background-color: #fff;
+    }
+
+    paper-tabs paper-tab::shadow #ink {
+      color: #ddd;
+    }
+
+    div.contents {
+      padding: 8px;
+    }
+  </style>
+</head>
+
+<body unresolved>
+  <div class="bottom fit" horizontal layout>
+    <paper-tabs id="maintab" selected="0" flex>
+      <paper-tab>Wakame</paper-tab>
+      <paper-tab>License</paper-tab>
+    </paper-tabs>
+  </div>
+  <div id="wakame" class="contents" style="display: block;">
+    <h1>How to use</h1>
+    <p>This application is now available only on Chrome OS. You can open tar, gz, and tar.gz files from Files.app.</p>
+  </div>
+  <div id="license" class="contents" style="display: none;">
+    <h1>Wakame</h1>
+    <p>An utility to decompress GNU Zip files and UNIX TAR files.</p>
+    <p>
+      <div>Copyright © 2014, Takashi Toyoshima &lt;toyoshim@gmail.com&gt; under New BSD License.</div>
+      <div><a href="https://github.com/toyoshim/jslt" target=_>https://github.com/toyoshim/wakame</a></div>
+    </p>
+    <hr>
+    <h1>Polymer</h1>
+    <p></p>
+    <p>
+      <div>Copyright © 2014, Polymer Authors. Licensed under New BSD License.</div>
+      <div><a href="https://www.polymer-project.org/" target=_>https://www.polymer-project.org/</a></div>
+    <hr>
+    <h1>zlib.js</h1>
+    <p>compact zlib, deflate, inflate, zip library in JavaScript.</p>
+    <p>
+      <div>Copyright © 2012 imaya. Licensed under the MIT License.</div>
+      <div><a href="https://github.com/imaya/zlib.js" target=_>https://github.com/imaya/zlib.js</a></div>
+    </p>
+    <hr>
+    <h1>jslt</h1>
+    <p>A JavaScript Library collection.</p>
+    <p>
+      <div>Copyright © 2012, Takashi Toyoshima &lt;toyoshim@gmail.com&gt; under New BSD License.</div>
+      <div><a href="https://github.com/toyoshim/jslt" target=_>https://github.com/toyoshim/jslt</a></div>
+    </p>
+  </div>
+  <script>
+    window.addEventListener('polymer-ready', function (e) {
+      document.getElementById('maintab').addEventListener('core-select', function () {
+        if (document.getElementById('maintab').selected == 0) {
+          document.getElementById('wakame').style.display='block';
+          document.getElementById('license').style.display='none';
+        } else {
+          document.getElementById('wakame').style.display='none';
+          document.getElementById('license').style.display='block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

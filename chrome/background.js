@@ -41,10 +41,10 @@ var expand = function (item) {
 
 chrome.app.runtime.onLaunched.addListener(function(data) {
   if (!data || !data.items) {
-    var width = 640;
-    var height = 480;
+    var width = 400;
+    var height = 600;
     chrome.app.window.create(
-      'copyright.html', {
+      'main.html', {
         innerBounds: {width: width, height: height, maxWidth: width, maxHeight: height, minWidth: width, minHeight: height},
         resizable: false },
       function (createdWindow) {

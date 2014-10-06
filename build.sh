@@ -36,8 +36,12 @@ build () {
     third_party/jslt/src/Directory.js \
     third_party/jslt/src/TarDirectory.js \
       | ./bower_components/uglify-js/bin/uglifyjs -nc > chrome/third_party/tar.min.js
+  if [ $? -ne 0 ]; then
+    return 1
+  fi
+  ./node_modules/vulcanize/bin/vulcanize --strip --csp --inline -o chrome/main.html src/main.html
   return $?
 }
 
-bower install && build && echo "succeeded"
+bower install && npm install vulcanize@0.4.2 && build && echo "succeeded"
 
