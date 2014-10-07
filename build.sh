@@ -43,5 +43,5 @@ build () {
   return $?
 }
 
-bower install && npm install vulcanize@0.4.2 && build && echo "succeeded"
+bower install && npm install vulcanize@0.4.2 && build && zip -r wakame.zip chrome echo "succeeded"
 
