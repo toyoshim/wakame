@@ -1,24 +1,3 @@
-var updateLoadProgress = function (rate) {
-  var load = document.getElementById('load');
-  load.value = rate;
-  var loadString = document.getElementById('load_string');
-  loadString.innerText = rate * 100;
-};
-
-var updateGunzipProgress = function (rate) {
-  var gunzip = document.getElementById('gunzip');
-  gunzip.value = rate;
-  var gunzipString = document.getElementById('gunzip_string');
-  gunzipString.innerText = rate * 100;
-};
-
-var updateStoreProgress = function (rate) {
-  var store = document.getElementById('store');
-  store.value = rate;
-  var storeString = document.getElementById('store_string');
-  storeString.innerText = rate * 100;
-};
-
 var store = function (result) {
   var path = _sourceFile.entry.fullPath;
   var options = {
@@ -51,7 +30,7 @@ var store = function (result) {
 var gunzip = function (data) {
   var lib = new Zlib.Gunzip(new Uint8Array(data));
   var result = lib.decompress();
-  updateGunzipProgress(1);
+  updateExecProgress(1);
   store(result);
 };
 

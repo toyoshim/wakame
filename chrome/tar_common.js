@@ -1,24 +1,3 @@
-var updateLoadProgress = function (rate) {
-  var load = document.getElementById('load');
-  load.value = rate;
-  var loadString = document.getElementById('load_string');
-  loadString.innerText = rate * 100;
-};
-
-var updateTarProgress = function (rate) {
-  var tar = document.getElementById('tar');
-  tar.value = rate;
-  var tarString = document.getElementById('tar_string');
-  tarString.innerText = rate * 100;
-};
-
-var updateStoreProgress = function (rate) {
-  var store = document.getElementById('store');
-  store.value = rate;
-  var storeString = document.getElementById('store_string');
-  storeString.innerText = rate * 100;
-};
-
 var copy = function (tar, fs) {
   this._fs = fs;
   this._entries = tar.getEntries();
@@ -117,6 +96,6 @@ var store = function (dir) {
 
 var tar = function (data) {
   var dir = new TarDirectory(data);
-  updateTarProgress(1);
+  updateExecProgress(1);
   store(dir);
 };

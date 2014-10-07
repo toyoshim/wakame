@@ -29,7 +29,7 @@
   "manifest_version": 2,
   "name": "Wakame",
   "description": "Wakame is an utility to decompress GNU Zip files and UNIX TAR files.",
-  "version": "0.1.0.0",
+  "version": "0.2.0.0",
   "permissions" : [
     { "fileSystem": [ "write", "directory" ] }
   ]

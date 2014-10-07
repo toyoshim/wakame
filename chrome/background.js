@@ -5,9 +5,8 @@ chrome.app.runtime.onLaunched.addListener(function(data) {
     chrome.app.window.create(
       'main.html', {
         innerBounds: {width: width, height: height, maxWidth: width, maxHeight: height, minWidth: width, minHeight: height},
-        resizable: false },
-      function (createdWindow) {
-      }
+        resizable: false
+      }, function () {}
     );
     return;
   }
