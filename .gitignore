@@ -1,4 +1,6 @@
 bower_components
+chrome/main.html
+chrome/main.js
 chrome/third_party
 node_modules
 third_party
