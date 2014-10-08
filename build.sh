@@ -21,20 +21,16 @@ build () {
   if [ $? -ne 0 ]; then
     return 1
   fi
-  checkout jslt https://github.com/toyoshim/jslt.git 89de2e11fa239c0be743561f9fe0e5a0c7589a20
-  if [ $? -ne 0 ]; then
-    return 1
-  fi
   cd ..
   cp third_party/zlib.js/bin/gunzip.min.js chrome/third_party/gunzip.min.js
   if [ $? -ne 0 ]; then
     return 1
   fi
   cat \
-    third_party/jslt/src/File.js \
-    third_party/jslt/src/ArrayBufferFile.js \
-    third_party/jslt/src/Directory.js \
-    third_party/jslt/src/TarDirectory.js \
+    bower_components/jslt/src/File.js \
+    bower_components/jslt/src/ArrayBufferFile.js \
+    bower_components/jslt/src/Directory.js \
+    bower_components/jslt/src/TarDirectory.js \
       | ./bower_components/uglify-js/bin/uglifyjs -nc > chrome/third_party/tar.min.js
   if [ $? -ne 0 ]; then
     return 1
